@@ -1,0 +1,9 @@
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--block-bg-color);
+    color: var(--block-txt-color);
+    column-gap: 16px;
+}

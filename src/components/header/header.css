@@ -1,0 +1,14 @@
+header {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--block-bg-color);
+    color: var(--block-txt-color);
+}
+header div {    
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+}

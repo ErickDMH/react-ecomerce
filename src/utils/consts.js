@@ -1,0 +1,1 @@
+export const WP_APPLICATION_PASSWORD = "9l6D i30t qevU I9HK KOEL hTeR"
