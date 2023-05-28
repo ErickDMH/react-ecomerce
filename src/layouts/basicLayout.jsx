@@ -1,7 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 import Drawer from '@mui/material/Drawer'
 import UIStore from '@/redux/ui'
 import {Header, Footer} from '@/components'
+import './basicLayout.css'
 
 export default function BasicLayout({children}) {
     const dispatch = useDispatch()
@@ -10,7 +11,7 @@ export default function BasicLayout({children}) {
     return (
         <>
             <Header toggleCartAside={()=>{dispatch(UIStore.actions.toggleCartSide())}}/>
-                <main>
+                <main className='content'>
                     {children}
                 </main>
             <Footer />

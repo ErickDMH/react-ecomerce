@@ -1,22 +1,14 @@
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 import {
     Instagram as InstagramIcon,
     Facebook as FacebookIcon
 } from '@mui/icons-material'
-import Axios from '@/utils/axios'
-import { useOnMountUnsafe } from '@/utils/unsafeHooks'
+import { useSelector } from 'react-redux'
 import './footer.css'
 
 export function Footer() {
-    const [socialNetworks, setSocialNetworks] = useState()
-    useOnMountUnsafe(() => {
-        if (socialNetworks === undefined) {
-            Axios.get('menus/v1/menus/social-network')
-                .then( res => { setSocialNetworks(res?.data?.items) })
-                .catch(error => { console.error('error',error) })
-        }
-    }, [socialNetworks])
-
+    const siteInfo = useSelector((state) => state.ui.siteInfo)
+    const socialNetworks = useSelector((state) => state.ui.socialNetworks)
 
     const getSocialNetworkSVG = socialNetwork => {
         switch(socialNetwork){
@@ -48,7 +40,7 @@ export function Footer() {
 
     return (
         <footer>
-            <h1>foot</h1>
+            <h1>{siteInfo?.name ?? 'Shop'}</h1>
             {
                 getSocialNetworks()
             }

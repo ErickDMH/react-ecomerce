@@ -10,13 +10,4 @@ const instance = axios.create({
   },
 });
 
-// instance.interceptors.request.use(function (config) {
-//   const auth = {
-//     username: 'ErickDMH',
-//     password: WP_APPLICATION_PASSWORD
-//   }
-//   config.headers.Authorization =  auth;
-//   return config;
-// });
-
 export default instance;

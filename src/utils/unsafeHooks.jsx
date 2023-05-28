@@ -10,3 +10,5 @@ export function useOnMountUnsafe(effect) {
     }
   }, [])
 }
+
+export default useOnMountUnsafe

@@ -3,9 +3,12 @@ import Badge from '@mui/material/Badge'
 import TextField from '@mui/material/TextField'
 import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { useSelector } from 'react-redux'
 import './header.css'
 
 export function Header({toggleCartAside}) {
+    const siteInfo = useSelector((state) => state.ui.siteInfo)
+
     const handleToggleCart = () => {
         if (toggleCartAside) {
             toggleCartAside()
@@ -13,7 +16,7 @@ export function Header({toggleCartAside}) {
     }
     return (
         <header>
-            <h1>Store</h1>
+            <img src={siteInfo?.site_icon_url} alt={siteInfo?.name ?? 'Shop'} />
             <div>
                 <div>
                     <SearchIcon />
