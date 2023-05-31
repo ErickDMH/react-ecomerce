@@ -1,16 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export default class ProductStore {
-    static _key = 'products'
-    constructor(products){
-        this.arrayProducts = products
+    static _key = 'product'
+    constructor(loading, products){
+        this.isLoading = loading
+        this.data = products
     }
     static reduxSlice = createSlice({
         name: this._key,
-        initialState: new ProductStore([]),
+        initialState: new ProductStore(false, undefined),
         reducers: {
             setProducts: (state, action) => {
-                return {...state, arrayProducts: action.payload || this.arrayProducts}
+                return {isLoading: false, data: action.payload}
+            },
+            setLoading: (state, action) => {
+                return {...state, isLoading: action.payload ?? !this.isLoading}
             },
         }
     })

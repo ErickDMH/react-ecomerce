@@ -1,14 +1,45 @@
 header {
+    min-width: 50px;
     width: 100%;
-    padding: 0 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--block-bg-color);
     color: var(--block-txt-color);
 }
+#profile,
+#search {
+    display: none;
+}
+header img {
+    width: 16%;
+    height: 100%;
+    max-width: 172px;
+    min-width: 116px;
+    padding-left: 4%;
+    padding-right: 2%;
+    background-image: url(src/assets/rectangleLeaf.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 header div {    
     display: flex;
     align-items: center;
     column-gap: 14px;
+}
+
+#search {
+    
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    header img,
+    #search {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
 }

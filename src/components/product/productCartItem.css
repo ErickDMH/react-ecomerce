@@ -1,0 +1,27 @@
+.product-cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.product-cart-item > div {
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.product-cart-item > div > *{
+    margin: 0;
+}
+
+.productQuantity {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+.productQuantity p {
+    margin: 0 8px;
+}
+.productQuantity button {
+    min-width: 20px;
+}

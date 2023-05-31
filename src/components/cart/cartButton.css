@@ -1,0 +1,16 @@
+#cartIcon {
+    margin-right: 22px;
+}
+#cartIcon .MuiBadge-badge {
+    background-color: #00a6da3d;
+}
+#cartIcon .MuiBadge-badge::before {
+    content: url(src/assets/gem.svg);
+    display: block;
+    position: absolute;
+    z-index: -1;
+    transform: scale(0.03);
+    margin-top: 4px;
+    margin-right: 1px;
+    filter: invert(46%) sepia(94%) saturate(2421%) hue-rotate(163deg) brightness(96%) contrast(101%);
+  }

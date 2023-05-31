@@ -1,5 +1,5 @@
 .product-card {
-    width: 40%;
+    width: 100%;
     min-width: 150px;
     max-width: 400px;
     min-height: 200px;
@@ -92,4 +92,36 @@ div.slider figure {
     padding-left: 8px;
     max-height: 18%;
     align-items: center;
+}
+.buy:hover {
+    background: rgba(255 255 255 / 80%);
+}
+.buy #price {
+    margin-right: 12px;
+}
+
+.productQuantity {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+.productQuantity p {
+    margin: 0 8px;
+}
+.productQuantity button {
+    min-width: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .product-card {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .product-card {
+        width: 50%;
+    }
 }

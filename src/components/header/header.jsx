@@ -1,31 +1,32 @@
 import {Avatar} from '@mui/material'
-import Badge from '@mui/material/Badge'
 import TextField from '@mui/material/TextField'
 import SearchIcon from '@mui/icons-material/Search'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import { useSelector } from 'react-redux'
+import {useSelector} from 'react-redux'
+import {useState} from 'react'
+import {CartButton} from '../cart/cartButton'
+import IconButton from '@mui/material/IconButton'
 import './header.css'
 
-export function Header({toggleCartAside}) {
+export function Header() {
     const siteInfo = useSelector((state) => state.ui.siteInfo)
+    const [activeSearch, setActiveSearch] = useState(false)
 
-    const handleToggleCart = () => {
-        if (toggleCartAside) {
-            toggleCartAside()
-        }
+    const handleOnChangeSearch = e => {
+        console.log('e',e.target.value)
     }
+
     return (
         <header>
             <img src={siteInfo?.site_icon_url} alt={siteInfo?.name ?? 'Shop'} />
             <div>
-                <div>
-                    <SearchIcon />
-                    <TextField id="outlined-basic" placeholder="Outlined"/>
+                <div id='search'>
+                    <IconButton onClick={()=>setActiveSearch(true)}>
+                        <SearchIcon />
+                    </IconButton>
+                    {activeSearch && <TextField id="outlined-basic" placeholder="Search" variant="standard" onChange={handleOnChangeSearch}/>}
                 </div>
-                <Avatar/>
-                <Badge badgeContent={4} color="primary">
-                    <ShoppingCartIcon onClick={handleToggleCart}/>
-                </Badge>
+                <Avatar id='profile'/>
+                <CartButton />
             </div>
         </header>
     )

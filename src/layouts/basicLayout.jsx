@@ -1,12 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux'
-import Drawer from '@mui/material/Drawer'
+import { useDispatch } from 'react-redux'
 import UIStore from '@/redux/ui'
-import {Header, Footer} from '@/components'
+import {Header, Footer, CartAside} from '@/components'
 import './basicLayout.css'
 
 export default function BasicLayout({children}) {
     const dispatch = useDispatch()
-    const cartAside = useSelector((state) => state.ui.cartAside)
     
     return (
         <>
@@ -15,13 +13,7 @@ export default function BasicLayout({children}) {
                     {children}
                 </main>
             <Footer />
-            <Drawer
-                anchor={cartAside.anchor}
-                open={cartAside.open}
-                onClose={() => {dispatch(UIStore.actions.toggleCartSide(false))}}
-            >
-                <h2>Cart</h2>
-          </Drawer>
+            <CartAside />
         </>
     );
 }

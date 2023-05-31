@@ -1,0 +1,15 @@
+#cart {
+    min-width: 30svh;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#total {
+    margin-top: auto;
+    align-self: flex-end;
+}
+#pay {
+    margin-bottom: 20%;
+}
