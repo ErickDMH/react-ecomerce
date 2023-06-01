@@ -11,7 +11,7 @@ const store = configureStore({
     reducer:{ 
         ui: UIStore.reducer,
         products: ProductStore.reducer,
-        category: CategoryStore.reducer,
+        categories: CategoryStore.reducer,
     },
     middleware: customizedMiddleware
 })

@@ -1,17 +1,18 @@
 
 import ProductCard from './productCard'
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import Skeleton from '@mui/material/Skeleton'
+import './productList.css'
 
-function ProductList() {
+export function ProductList() {
     const {data, isLoading} = useSelector((state) => state.products)
 
     if (isLoading) {
         return(
-            <div className='skeleton-holder'>
+            <div className='products-skeleton-holder'>
                 {
                     [...new Array(8)].map((x, index) => {
-                        return <Skeleton key={`RectSkeleton${index}${Date.now()}`} width={400} height={330}/>
+                        return <Skeleton key={`RectSkeleton${index}${Date.now()}`} width={'100%'} height={280} variant="rounded"/>
                     })
                 }
             </div>)

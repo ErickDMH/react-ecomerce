@@ -1,0 +1,38 @@
+.products-skeleton-holder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    padding: 2%;
+    row-gap: 2%;
+    overflow-y: auto;
+}
+.products-skeleton-holder * {
+    max-width: 400px;
+}
+
+#products-holder {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4%;
+    row-gap: 4%;
+    column-gap: 2%;
+    justify-content: center;
+    align-content: flex-start;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 3%;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    #products-holder {
+        padding-bottom: 2%;
+        padding-top: 1%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+}

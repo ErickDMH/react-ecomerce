@@ -92,8 +92,6 @@ div.slider figure {
     padding-left: 8px;
     max-height: 18%;
     align-items: center;
-}
-.buy:hover {
     background: rgba(255 255 255 / 80%);
 }
 .buy #price {

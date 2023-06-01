@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export default class UIStore {
+export class UIStore {
     static _key = 'ui'
     constructor(cartAside, siteInfo, socialNetworks){
         this.cartAside = cartAside;
@@ -49,3 +49,4 @@ export default class UIStore {
         return this.reduxSlice.actions
     }
 }
+export default UIStore

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export default class ProductStore {
+export class ProductStore {
     static _key = 'product'
     constructor(loading, products){
         this.isLoading = loading
@@ -25,3 +25,4 @@ export default class ProductStore {
         return this.reduxSlice.actions
     }
 }
+export default ProductStore

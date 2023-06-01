@@ -1,13 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export default class CategoryStore {
+export class CategoryStore {
     static _key = 'category'
+    data
+    selected
+    used
+    constructor(loading){
+        this.isLoading = loading
+    }
     static reduxSlice = createSlice({
         name: this._key,
-        initialState: [],
+        initialState: new CategoryStore(false),
         reducers: {
             setCategories: (state, action) => {
-                return action.payload || state
+                return {...state, data: action.payload}
+            },
+            setLoading: (state, action) => {
+                return {...state, isLoading: action.payload ?? !this.isLoading}
+            },
+            setSelected: (state, action) => {
+                return {...state, selected: action.payload}
+            },
+            setUsed: (state, action) => {
+                return {...state, isLoading: false, used: action.payload}
             },
         }
     })
@@ -18,3 +33,4 @@ export default class CategoryStore {
         return this.reduxSlice.actions
     }
 }
+export default CategoryStore
